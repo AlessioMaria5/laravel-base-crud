@@ -7,7 +7,14 @@
 <div class="comics-list">
 
 @foreach ($comics as $comic)
-<p>{{$comic->title}}</p>
+<span>{{$comic->title}}</span>
+<form action="{{route('comics.destroy', $comic)}}" method="post">
+    @method('DELETE')
+    @csrf
+<button type="submit">Delete</button>
+</form>
+
+<br>
 @endforeach
 
 </div>
