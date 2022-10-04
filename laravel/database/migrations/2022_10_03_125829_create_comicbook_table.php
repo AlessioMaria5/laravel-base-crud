@@ -13,13 +13,13 @@ class CreateComicbookTable extends Migration
      */
     public function up()
     {
-        Schema::create('comicbook', function (Blueprint $table) {
+        Schema::create('comics', function (Blueprint $table) {
             $table->id();
-            $table->string('titolo',50);
-            $table->text('description');
-            $table->string('thumb');
-            $table->decimal('price', 9, 3);
-            $table->time('sale_date');
+            $table->string('title',50);
+            $table->longText('description');
+            $table->string('thumb',255);
+            $table->decimal('price', 8, 2);
+            $table->date('sale_date');
             $table->string('type',50);
             $table->timestamps();
             
